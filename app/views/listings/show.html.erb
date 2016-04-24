@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Showroom</strong>
+  <% @listing.showrooms.each do |showroom| %>
+    <%= image_tag showroom.url, height: 80, width: 80 %>   
+    <% end %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @listing.user_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <strong>Accomodates:</strong>
+  <%= @listing.accomodates %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @listing.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @listing.city %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @listing.price %>
+</p>
+
+<p>
+  <strong>Smoking room:</strong>
+  <%= @listing.smoking_room %>
+</p>
+
+<p>
+  <strong>Pet friendly:</strong>
+  <%= @listing.pet_friendly %>
+</p>
+
+<p>
+  <strong>Apartment:</strong>
+  <%= @listing.apartment %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @listing.house %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

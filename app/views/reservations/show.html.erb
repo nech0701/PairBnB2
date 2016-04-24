@@ -1,0 +1,9 @@
+<h1>Reservations#show</h1>
+<p>Find me in app/views/reservations/show.html.erb</p>
+
+<p>Your Total Payment</p>
+<p>$<%= @reservation.total_price.to_i %></p><br>
+
+<%= link_to 'Pay Now', new_reservation_payment_path(@reservation.id), data: {no_turbolink: true} %>
+
+<%= link_to 'Back', reservation_path %>

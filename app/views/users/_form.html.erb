@@ -1,0 +1,21 @@
+<%= form_for @user, html: { multipart: true } do |f| %>
+
+<div class="file-field">
+  <%= f.file_field :avatar %> <br>
+  <%= f.label :Profile_Picture %>
+</div>
+
+<div class="text-field">
+  <%= f.label :email %>
+  <%= f.text_field :email, type: 'email' %>
+</div>
+
+<div class="password-field">
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</div>
+
+<div class"submit-field">
+	<%= f.submit%>
+	</div>
+<% end %>

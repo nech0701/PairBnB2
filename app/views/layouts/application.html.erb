@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--     <script type='text/javascript' src="/app/assets/javascripts/application.js"></script> -->
+<%= javascript_include_tag 'application' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://js.braintreegateway.com/js/braintree-2.22.2.min.js"></script>
+    <meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"
+
+  <title>Pairbnb</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <% if signed_in? %>
+      <%= current_user.email %><br>
+        <div id="flash">
+          <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>        
+    <% end %>
+    </div>
+      <%= link_to "Sign out", sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", sign_in_path %>
+    <% end %>
+</div>
+
+<div class="container-fluid">
+<a href="/auth/facebook">Log in with facebook</button></a>
+	</a>
+</div>
+
+<div class="container-fluid">
+  <% if signed_in? %>
+    <%= link_to 'Profile', user_path(current_user.id) %>
+  <% end %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
+
